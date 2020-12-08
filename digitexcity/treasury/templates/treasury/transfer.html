@@ -1,0 +1,12 @@
+{% extends 'treasury/base.html' %}
+
+{% block main_block %}
+    Transfer:
+     <form class="form-horizontal" action="{% url 'dapi:external_transfer' %}" method="post">
+        {% csrf_token %}
+        {{ transfer_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="Enter">
+        <input type="hidden" name="transfer" value="main-to-app">
+    </form>
+{% endblock %}

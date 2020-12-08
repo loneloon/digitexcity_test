@@ -1,0 +1,12 @@
+{% extends 'patterns/base.html' %}
+
+{% block menu_block %}
+{% include 'patterns/includes/inc__menu.html' %}
+{% endblock %}
+
+{% block main_block %}
+    <br>
+    <li>App balance: {{ balance }}</li>
+    <br>
+    <li><a href="{{ transfer_link }}">Transfer funds</a></li>
+{% endblock %}

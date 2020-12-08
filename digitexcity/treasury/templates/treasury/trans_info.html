@@ -1,0 +1,41 @@
+{% extends 'treasury/transfer_dialogue.html' %}
+
+
+{% block main_block %}
+    Transaction Details:
+
+    <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax">from-to</th>
+    <th class="tg-0lax">amount<br></th>
+    <th class="tg-0lax">status<br></th>
+    <th class="tg-0lax">created_at</th>
+    <th class="tg-0lax">updated_at</th>
+    <th class="tg-0lax">track_id</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">{{ from_to }}</td>
+    <td class="tg-0lax">{{ amount }}</td>
+    <td class="tg-0lax">{{ status }}</td>
+    <td class="tg-0lax">{{ created }}</td>
+    <td class="tg-0lax">{{ updated }}</td>
+    <td class="tg-0lax">{{ track_id }}</td>
+  </tr>
+</tbody>
+</table>
+
+<button class="btn btn-round form-control">
+    <a href="{% url 'main:index' %}" class="">Back to main</a>
+  </button>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'treasury/transfer_dialogue.html' %}
+
+
+{% block main_block %}
+    Transfer Validation:
+    <br>
+    <form class="form-horizontal" action="{% url 'treasury:transfer' %}" method="post">
+        {% csrf_token %}
+        {% for line in validation_form %}
+        <li>{{ line.label_tag }} {{ line }}</li>
+        {% endfor %}
+        <br>
+        <input class="form-control" type="submit" value="Enter">
+        {% for key, value in api_tail.items %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+    </form>
+
+{% endblock %}

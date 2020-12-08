@@ -1,0 +1,45 @@
+All valuable modules are marked with comments.
+
+Project is divided into the following segments:
+
+    authapp:
+        - user auth
+        - email verification
+        - sign-in/out
+        
+    dapi:
+        - acts as middleman for Treasury-App transfer
+        
+    digitexcity:
+        - settings
+        - url_vault
+        - wsgi for deployment
+        
+    mainapp:
+        - serves main non app-specific views
+        - manages app registry
+        - holds project management commands accessed through manage.py
+        
+    /name/_app apps:
+        - hold models based on pattern classes
+        - template url lists for each app
+        
+    patterns:
+        - form patterns
+        - universal functions accessed by all segments
+        - model patterns
+
+    treasury:
+        - serves main user balances
+        - describes transfer dialogue with apps through API
+        - manages transaction records 
+
+
+1. requirements.txt for necessary libraries is included in project root
+2. Use reset_django.sh script to wipe migrations, fresh migrate and app scrape to collect connected apps into db
+3. Dev-server is initiated on local '127.0.0.1:8000' address
+4. User authentication is implemented through form or Google account.
+5. After manual registration email-verification message is saved to tmp folder.
+6. Google authentication doesn't work, google_code field in transfer accepts any integer up to 6 digits,
+    email validation is legit (emails are saved to tmp).
+    

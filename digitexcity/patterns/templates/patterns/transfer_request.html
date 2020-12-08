@@ -1,0 +1,11 @@
+{% extends 'patterns/base.html' %}
+
+{% block main_block %}
+    Transfer:
+     <form class="form-horizontal" action="{{ app_repath }}" method="post">
+        {% csrf_token %}
+        {{ transfer_request.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="Submit">
+    </form>
+{% endblock %}

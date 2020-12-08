@@ -1,0 +1,14 @@
+{% extends 'treasury/transfer_dialogue.html' %}
+
+
+{% block main_block %}
+    {% if transfer_result == 'success' %}
+        <h1>Good!</h1>
+    {% else %}
+        <h1>Denied!</h1>
+    {% endif %}
+
+    <button class="btn btn-round form-control">
+    <a href="{% url 'main:index' %}" class="">Back to main</a>
+  </button>
+{% endblock %}
